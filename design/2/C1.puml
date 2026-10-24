@@ -1,0 +1,14 @@
+@startuml
+!include <c4/C4_Context.puml>
+
+
+Person(student, "Учащийся", "Разработчик или студент, проходит уроки и викторины")
+
+System(letters, "Letters", "Веб-тренажёр паттернов проектирования: теория, задания на TypeScript с автопроверкой, викторины")
+
+System_Ext(github, "GitHub", "OAuth-вход")
+
+Rel(student, letters, "Изучает теорию, решает задания", "HTTPS")
+Rel(letters, github, "Авторизует пользователей", "OAuth 2.0")
+
+@enduml
